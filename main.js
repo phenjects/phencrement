@@ -1,10 +1,13 @@
-// NOTE: learn abt objects first
-//       dumbfuck
+// NOTE: learn abt objects 
+//                 dumbfuck
+
+
 
 
 // main variables for game's whole function
 let valueMain = 0;
 let valuePower = 1;
+let clickFuncVar;
 let startBtn = document.getElementById("start");
 let incrementBtn = document.getElementById("increment");
 let decrementBtn = document.getElementById("decrement");
@@ -22,12 +25,15 @@ startBtn.addEventListener("click", function () {
   update();
 });
 
+function ifClick(varName) {
+  varName.addEventListener("click", function () {
+    clickFuncVar;
+  })
+}
+
 // main game functions
 if (gameState) {
-  incrementBtn.addEventListener("click", function () {
-  valueMain += valuePower;
-  update();
-});  
-  
-  
+  ifClick("incrementBtn")
+  clickFuncVar = valueMain += valuePower
+  update();  
 }
