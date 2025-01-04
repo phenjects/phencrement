@@ -37,7 +37,6 @@ function buttonFunc() {
         valueMain -= valueMain;
       });
   }
-  update();
 }
 
 buttonFunc();
