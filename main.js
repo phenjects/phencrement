@@ -23,16 +23,15 @@ startBtn.addEventListener("click", function () {
 
 // main game functions
 function buttonFunc() {
-  switch (gameState) {
-    case true:
+  if (gameState) {
       incrementBtn.addEventListener("click", function () {
         valueMain += valuePower;
       });
-    case true:
+   
       decrementBtn.addEventListener("click", function () {
         valueMain -= valuePower;
       });
-    default:
+    
       resetBtn.addEventListener("click", function () {
         valueMain -= valueMain;
       });
