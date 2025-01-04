@@ -13,10 +13,11 @@ const resetBtn = document.getElementById("reset");
 // simple update function to make code more readable and simple
 function update() {
   document.getElementById("value").innerHTML = valueMain;
-}
+} 
 
 test.onclick = function() {
   z = true;
+  test.remove();
   update();
 }
 
@@ -44,3 +45,7 @@ function buttonFunc() {
 if (z) {
   buttonFunc();
 }
+
+setInterval(() => {
+  console.log(z);
+}, 1000);
