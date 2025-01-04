@@ -4,38 +4,43 @@
 // main variables for game's whole function
 let valueMain = 0;
 let valuePower = 1;
-const startBtn = document.getElementById("start");
+let z = false;
+const test = document.getElementById("t");
 const incrementBtn = document.getElementById("increment");
 const decrementBtn = document.getElementById("decrement");
 const resetBtn = document.getElementById("reset");
-let gameState = false;
 
 // simple update function to make code more readable and simple
 function update() {
   document.getElementById("value").innerHTML = valueMain;
-  gameState = true;
 }
 
-// start button to give sort of a main menu type vibe
-startBtn.addEventListener("click", function () {
+test.onclick = function() {
+  z = true;
   update();
-});
+}
 
 // main game functions
 function buttonFunc() {
-  if (gameState) {
-      incrementBtn.addEventListener("click", function () {
-        valueMain += valuePower;
-      });
-   
-      decrementBtn.addEventListener("click", function () {
-        valueMain -= valuePower;
-      });
-    
-      resetBtn.addEventListener("click", function () {
-        valueMain -= valueMain;
-      });
-  }
+  incrementBtn.onclick = function() {
+    valueMain += valuePower;
+    console.log("inc");
+    update();
+  };
+
+  decrementBtn.onclick = function() {
+    valueMain -= valuePower;
+    console.log("dec");
+    update();
+  };
+
+  resetBtn.onclick = function() {
+    valueMain = 0;
+    console.log("res");
+    update();
+  };
 }
 
-buttonFunc();
+if (z) {
+  buttonFunc();
+}
