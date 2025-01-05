@@ -6,38 +6,48 @@ let valueMain = 0;
 let valuePower = 1;
 let gameState = false;
 const startBtn = document.getElementById("start");
-const incrementBtn = document.getElementById("increment");
-const decrementBtn = document.getElementById("decrement");
-const resetBtn = document.getElementById("reset");
 
 // simple update function to make this more simple
 function update() {
   document.getElementById("value").innerHTML = valueMain;
-} 
+}
 
 // starts the game and removes the start button
-startBtn.onclick = function() {
+startBtn.onclick = function () {
   gameState = true;
   test.remove();
   buttonFunc();
   update();
+};
+
+// button creation function
+function buttonCreate() {
+  // creates the buttons
+  const incrementBtn = document.createElement("button");
+  const decrementBtn = document.createElement("button");
+  const resetBtn = document.createElement("button");
+
+  // adds the attrubutes to the buttons
+  incrementBtn.setAttribute("id", "increment");
+  decrementBtn.setAttribute("id", "decrement");
+  resetBtn.setAttribute("id", "reset");
 }
 
 // main game functions
 function buttonFunc() {
-  incrementBtn.onclick = function() {
+  incrementBtn.onclick = function () {
     valueMain += valuePower;
     console.log("inc");
     update();
   };
 
-  decrementBtn.onclick = function() {
+  decrementBtn.onclick = function () {
     valueMain -= valuePower;
     console.log("dec");
     update();
   };
 
-  resetBtn.onclick = function() {
+  resetBtn.onclick = function () {
     valueMain = 0;
     console.log("res");
     update();
