@@ -15,7 +15,7 @@ function update() {
 // starts the game and removes the start button
 startBtn.onclick = function () {
   gameState = true;
-  test.remove();
+  startBtn.remove();
   buttonCreate();
   buttonFunc();
   update();
@@ -28,10 +28,17 @@ function buttonCreate() {
   const decrementBtn = document.createElement("button");
   const resetBtn = document.createElement("button");
 
-  // adds the attrubutes to the buttons
+  // adds the names to the buttons
+  incrementBtn.innerHTML = "increment";
+  decrementBtn.innerHTML = "decrement";
+  resetBtn.innerHTML = "reset";
+
+  // adds the attributes to the buttons
   incrementBtn.setAttribute("id", "increment");
   decrementBtn.setAttribute("id", "decrement");
   resetBtn.setAttribute("id", "reset");
+
+  console.log("buttons created");
 }
 
 // main game functions
