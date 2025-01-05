@@ -4,8 +4,8 @@
 // main variables for game's whole function
 let valueMain = 0;
 let valuePower = 1;
-let z = false;
-const test = document.getElementById("t");
+let gameState = false;
+const startBtn = document.getElementById("start");
 const incrementBtn = document.getElementById("increment");
 const decrementBtn = document.getElementById("decrement");
 const resetBtn = document.getElementById("reset");
@@ -15,9 +15,10 @@ function update() {
   document.getElementById("value").innerHTML = valueMain;
 } 
 
-test.onclick = function() {
-  z = true;
+startBtn.onclick = function() {
+  gameState = true;
   test.remove();
+  buttonFunc();
   update();
 }
 
@@ -41,11 +42,3 @@ function buttonFunc() {
     update();
   };
 }
-
-if (z) {
-  buttonFunc();
-}
-
-setInterval(() => {
-  console.log(z);
-}, 1000);
