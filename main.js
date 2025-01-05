@@ -16,6 +16,7 @@ function update() {
 startBtn.onclick = function () {
   gameState = true;
   test.remove();
+  buttonCreate();
   buttonFunc();
   update();
 };
