@@ -10,11 +10,12 @@ const incrementBtn = document.getElementById("increment");
 const decrementBtn = document.getElementById("decrement");
 const resetBtn = document.getElementById("reset");
 
-// simple update function to make code more readable and simple
+// simple update function to make this more simple
 function update() {
   document.getElementById("value").innerHTML = valueMain;
 } 
 
+// starts the game and removes the start button
 startBtn.onclick = function() {
   gameState = true;
   test.remove();
