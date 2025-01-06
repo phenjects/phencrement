@@ -22,6 +22,7 @@ startBtn.onclick = function () {
 
 // main game functions
 function buttonFunc() {
+  // adds the buttons (not to the DOM)
   const incrementBtn = document.createElement("button");
   const decrementBtn = document.createElement("button");
   const resetBtn = document.createElement("button");
