@@ -16,19 +16,17 @@ function update() {
 startBtn.onclick = function () {
   gameState = true;
   startBtn.remove();
-  buttonCreate();
   buttonFunc();
   update();
 };
 
-// button creation function
-function buttonCreate() {
-  // creates the buttons
+// main game functions
+function buttonFunc() {
   const incrementBtn = document.createElement("button");
   const decrementBtn = document.createElement("button");
   const resetBtn = document.createElement("button");
 
-  // adds the names to the buttons
+  // adds the names of the buttons
   incrementBtn.innerHTML = "increment";
   decrementBtn.innerHTML = "decrement";
   resetBtn.innerHTML = "reset";
@@ -38,11 +36,13 @@ function buttonCreate() {
   decrementBtn.setAttribute("id", "decrement");
   resetBtn.setAttribute("id", "reset");
 
-  console.log("buttons created");
-}
+  // adds the buttons to the DOM
+  document.body.appendChild(incrementBtn);
+  document.body.appendChild(decrementBtn);
+  document.body.appendChild(resetBtn);
 
-// main game functions
-function buttonFunc() {
+  console.log("buttons created");
+
   incrementBtn.onclick = function () {
     valueMain += valuePower;
     console.log("inc");
