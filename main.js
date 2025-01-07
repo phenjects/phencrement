@@ -1,11 +1,7 @@
-// NOTE: learn abt objects
-//       dumbfuck
-
 // main variables for game's whole function
 let valueMain = 0;
 let valuePower = 1;
 let gameState = false;
-const startBtn = document.getElementById("start");
 
 // simple update function to make this more simple
 function update() {
@@ -13,52 +9,47 @@ function update() {
 }
 
 // starts the game and removes the start button
-startBtn.onclick = function () {
-  gameState = true;
-  startBtn.remove();
-  buttonFunc();
-  update();
-};
+document.addEventListener("DOMContentLoaded", function () {
+  const startBtn = document.getElementById("start");
+
+  startBtn.onclick = function () {
+    gameState = true;
+    startBtn.remove();
+    buttonFunc();
+    update();
+  };
+});
 
 // main game functions
 function buttonFunc() {
-  // adds the buttons (not to the DOM)
-  const incrementBtn = document.createElement("button");
-  const decrementBtn = document.createElement("button");
-  const resetBtn = document.createElement("button");
+  // create and append buttons to the DOM
+  const buttons = [
+    { id: "increment", text: "increment" },
+    { id: "reset", text: "reset" },
+    { id: "decrement", text: "decrement" }
+  ];
 
-  // adds the names of the buttons
-  incrementBtn.innerHTML = "increment";
-  decrementBtn.innerHTML = "decrement";
-  resetBtn.innerHTML = "reset";
+  buttons.forEach(button => {
+    const btn = document.createElement("button");
+    btn.setAttribute("id", button.id);
+    btn.setAttribute("class", button.id);
+    btn.innerHTML = button.text;
+    document.body.appendChild(btn);
+  });
 
-  // adds the attributes to the buttons
-  incrementBtn.setAttribute("id", "increment");
-  decrementBtn.setAttribute("id", "decrement");
-  resetBtn.setAttribute("id", "reset");
-
-  // adds the buttons to the DOM
-  document.body.appendChild(incrementBtn);
-  document.body.appendChild(decrementBtn);
-  document.body.appendChild(resetBtn);
-
-  console.log("buttons created");
-
-  incrementBtn.onclick = function () {
+  // add event listeners to the buttons
+  document.getElementById("increment").onclick = function () {
     valueMain += valuePower;
-    console.log("inc");
     update();
   };
 
-  decrementBtn.onclick = function () {
+  document.getElementById("decrement").onclick = function () {
     valueMain -= valuePower;
-    console.log("dec");
     update();
   };
 
-  resetBtn.onclick = function () {
+  document.getElementById("reset").onclick = function () {
     valueMain = 0;
-    console.log("res");
     update();
   };
 }
