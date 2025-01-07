@@ -9,6 +9,8 @@ body {
 }
 
 .start {
-  display: flex;
-  justify-content: end;
+  font-family: "Comic Sans MS";
+  font-weight: bold;
+  background-color: aqua;
+  padding: 10px;
 }

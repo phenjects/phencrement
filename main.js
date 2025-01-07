@@ -26,10 +26,11 @@ function buttonFunc() {
   const buttons = [
     { id: "increment", text: "increment" },
     { id: "reset", text: "reset" },
-    { id: "decrement", text: "decrement" }
+    { id: "decrement", text: "decrement" },
+    { id: "mode", text: "change mode" },
   ];
 
-  buttons.forEach(button => {
+  buttons.forEach((button) => {
     const btn = document.createElement("button");
     btn.setAttribute("id", button.id);
     btn.setAttribute("class", button.id);
@@ -50,6 +51,19 @@ function buttonFunc() {
 
   document.getElementById("reset").onclick = function () {
     valueMain = 0;
+    update();
+  };
+
+  document.getElementById("mode").onclick = function () {
+    let colorMode = false;
+    if (colorMode) {
+      document.querySelector("body").style.backgroundColor =
+        "rgb(255, 252, 232)";
+      colorMode = false;
+    } else {
+      document.querySelector("body").style.backgroundColor = "rgb(28, 28, 41)";
+      colorMode = true;
+    }
     update();
   };
 }
