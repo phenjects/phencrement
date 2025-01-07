@@ -2,6 +2,7 @@
 let valueMain = 0;
 let valuePower = 1;
 let gameState = false;
+let darkMode = false;
 
 // simple update function to make this more simple
 function update() {
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // main game functions
 function buttonFunc() {
-  // create and append buttons to the DOM
+// create and adds buttons to the DOM  {
   const buttons = [
     { id: "increment", text: "increment" },
     { id: "reset", text: "reset" },
@@ -37,6 +38,7 @@ function buttonFunc() {
     btn.innerHTML = button.text;
     document.body.appendChild(btn);
   });
+// }
 
   // add event listeners to the buttons
   document.getElementById("increment").onclick = function () {
@@ -54,15 +56,19 @@ function buttonFunc() {
     update();
   };
 
+  // DARK MODE BABY WOOOOO
   document.getElementById("mode").onclick = function () {
-    let colorMode = false;
-    if (colorMode) {
+    if (darkMode) {
       document.querySelector("body").style.backgroundColor =
         "rgb(255, 252, 232)";
-      colorMode = false;
+      document.getElementById("value").style.color = "rgb(28, 28, 41)";
+      console.log("kill yourself");
+      darkMode = false;
     } else {
       document.querySelector("body").style.backgroundColor = "rgb(28, 28, 41)";
-      colorMode = true;
+      document.getElementById("value").style.color = "rgb(255, 252, 232)";
+      console.log("dark mode");
+      darkMode = true;
     }
     update();
   };
