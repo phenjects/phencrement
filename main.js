@@ -36,7 +36,7 @@ function buttonFunc() {
     btn.setAttribute("id", button.id);
     btn.setAttribute("class", button.id);
     btn.innerHTML = button.text;
-    document.body.appendChild(btn);
+    document.getElementById("buttonDiv").appendChild(btn);
   });
 // }
 

@@ -14,3 +14,10 @@ body {
   background-color: aqua;
   padding: 10px;
 }
+
+.buttonDiv {
+  text-align: center;
+}
+.increment {
+  text-align: center;
+}
