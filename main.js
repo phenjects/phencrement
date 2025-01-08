@@ -56,7 +56,7 @@ function buttonFunc() {
     update();
   };
 
-  // DARK MODE BABY WOOOOO
+  // DARK MODE BABY WOOOOO (rest your eyes sweet child)
   document.getElementById("mode").onclick = function () {
     if (darkMode) {
       document.querySelector("body").style.backgroundColor =
